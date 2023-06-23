@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Invoice Data Extraction Results</title>
+</head>
+<body>
+    <h1>PDF Invoice Data Extraction Results</h1>
+    <h2>Header Data:</h2>
+    <ul>
+        {% for key, value in data.header_data.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Tabular Data:</h2>
+    <table>
+        {% for row in data.tabular_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
